@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_nm">नाव प्रविष्ट करा</string>
+    <string name="enter_pwd">पासवर्ड टाका</string>
+    <string name="remember_pwd">पासवर्ड लक्षात ठेवा</string>
+</resources>
