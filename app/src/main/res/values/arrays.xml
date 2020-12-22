@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="countries">
-        <item>India</item>
-        <item>usa</item>
-        <item>uk</item>
-        <item>Bangladesh</item>
+    <string-array name="students">
+        <item>shubam</item>
+        <item>vijay</item>
+        <item>sai</item>
 
     </string-array>
 </resources>
