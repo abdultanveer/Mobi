@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button_login:
                 Toast.makeText(this, "weldome to android", Toast.LENGTH_LONG).show();
                 Intent hIntent = new Intent(MainActivity.this,HomeActivity.class);
+                hIntent.putExtra("mkey","bmwcar");
                 startActivity(hIntent);
                break;
             case R.id.button_cancel:
