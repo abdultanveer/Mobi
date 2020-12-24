@@ -28,10 +28,18 @@ public class MainActivity extends AppCompatActivity {
                 createAlarm("disturb vijay",12,30);
                break;
             case R.id.button_cancel:
-                Toast.makeText(this, "rescheduling class", Toast.LENGTH_SHORT).show();
+               /* Toast.makeText(this, "rescheduling class", Toast.LENGTH_SHORT).show();
                 Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:98765432"));
                 startActivity(dialIntent);
+*/
+                startTimer("my daily walk",60);
+                break;
+            case R.id.buttonMilk:
+                startTimer("milk is overflowing",3);
 
+                break;
+            case R.id.buttonMotor:
+                startTimer("water overflowing",5);
                 break;
         }
 
@@ -47,4 +55,17 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+
+
+    public void startTimer(String message, int seconds) {
+        Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
+                .putExtra(AlarmClock.EXTRA_MESSAGE, message)
+                .putExtra(AlarmClock.EXTRA_LENGTH, seconds)
+                .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
 }
