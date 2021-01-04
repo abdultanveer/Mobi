@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -18,5 +19,12 @@ public class HomeActivity extends AppCompatActivity {
 
         TextView homeTextView = findViewById(R.id.textViewhome);
         homeTextView.setText(car);
+    }
+
+    public void handleClick(View view) {
+        Intent stationeryIntent = new Intent();
+        stationeryIntent.putExtra("stationery","fevicol glue");
+        setResult(RESULT_OK,stationeryIntent);
+        finish();
     }
 }

@@ -1,5 +1,6 @@
 package com.next.mobi;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,11 +22,10 @@ public class MainActivity extends AppCompatActivity {
     public void clickHandler(View view) {
         switch (view.getId()){
             case R.id.button_login:
-               /* Toast.makeText(this, "weldome to android", Toast.LENGTH_LONG).show();
+               /* Toast.makeText(this, "weldome to android", Toast.LENGTH_LONG).show();*/
                 Intent hIntent = new Intent(MainActivity.this,HomeActivity.class);
                 hIntent.putExtra("mkey","bmwcar");
-                startActivity(hIntent);*/
-                createAlarm("disturb vijay",12,30);
+                startActivityForResult(hIntent,123);
                break;
             case R.id.button_cancel:
                /* Toast.makeText(this, "rescheduling class", Toast.LENGTH_SHORT).show();
@@ -68,4 +68,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent stationeryIntent) {
+        super.onActivityResult(requestCode, resultCode, stationeryIntent);
+        if(resultCode == RESULT_OK){
+            String stationery = stationeryIntent.getStringExtra("stationery");
+            Toast.makeText(this, stationery, Toast.LENGTH_SHORT).show();
+        }
+    }
 }
